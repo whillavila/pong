@@ -1,17 +1,10 @@
 # Pong
 
-[![Build Status](https://travis-ci.org/rhardih/pong.svg?branch=master)](https://travis-ci.org/rhardih/pong)
-
-A minimal availability monitoring system with email alerts and push notifications.
-
-- [Changelog](https://github.com/rhardih/pong/blob/master/CHANGELOG.md)
-- [Screenshots](https://github.com/rhardih/pong/blob/master/screenshots)
+Um sistema simples de monitoramento de disponibilidade, com alertas de e-mail e notificações push.
 
 ## Requirements
 
-Pong is a dockerized Rails application run via docker-compose, so both a host
-running [docker](https://www.docker.com/get-started) and a client with
-[compose](https://docs.docker.com/compose/install/) are required.
+Pong é um aplicativo Rails executado via docker-compose, portanto, tanto [docker](https://www.docker.com/get-started) quanto o [compose](https://docs.docker.com/compose/install/) são obrigatórios.
 
 ## Configuration
 
@@ -19,19 +12,12 @@ running [docker](https://www.docker.com/get-started) and a client with
 
 #### EMail
 
-By default Pong uses [mailgun](https://www.mailgun.com/) as delivery method for
-ActionMailer. There's no specific reason other than easy integration via
-mailgun-ruby, and because they have a free plan with more than enough monthly
-sends for the purpose of occasional email alerts.
+Por padrão, Pong usa [mailgun](https://www.mailgun.com/) como método de entrega para
+alertas de e-mail. Não há nenhuma razão específica além da fácil integração via
+mailgun-ruby.
 
-Since the free plan doesn't allow ad-hoc delivery, it's necessary to add the
-alert receiver as an [Authorized
-Recipient](https://help.mailgun.com/hc/en-us/articles/217531258-Authorized-Recipients)
-in the mailgun account settings.
-
-The application expects the following environment variables, either added in the
-default compose file, or added in the
-[.env](https://github.com/rhardih/pong/blob/master/.env) file.
+Nossa aplicação espera as seguintes variáveis de ambiente, adicionadas no
+arquivo [.env](https://github.com/whillavila/pong/blob/master/.env)
 
 ```
 MAILGUN_API_KEY
@@ -40,10 +26,9 @@ EMAIL_SENDER
 EMAIL_RECEIVER
 ```
 
-The sender is set as as default *from* address for all alerts, and the receiver
-is the target address for all alert mailings.
+A variável *EMAIL_SENDER* define o remetente padrão para todos os alertas, e o *EMAIL_RECEIVER* é o destinatário padrão.
 
-For now Pong only supports a single global receiver.
+Por conta disto, o Pong suporte apenas um único destinatário.
 
 #### Push (via [Telegram](telegram.org))
 
