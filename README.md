@@ -2,13 +2,13 @@
 
 Um sistema simples de monitoramento de disponibilidade, com alertas de e-mail e notificações push.
 
-## Requirements
+## Requisitos
 
 Pong é um aplicativo Rails executado via docker-compose, portanto, tanto [docker](https://www.docker.com/get-started) quanto o [compose](https://docs.docker.com/compose/install/) são obrigatórios.
 
-## Configuration
+## Configurações
 
-### Notifications
+### Notificações
 
 #### EMail
 
@@ -30,7 +30,7 @@ A variável *EMAIL_SENDER* define o remetente padrão para todos os alertas, e o
 
 Por conta disto, o Pong suporte apenas um único destinatário.
 
-#### Push (via [Telegram](telegram.org))
+#### [Telegram](telegram.org))
 
 Pong supports push notifications, via direct chat messages over Telegram. This
 requires creating a dedicated [Telegram bot and corresponding API key](https://core.telegram.org/#bot-api).
